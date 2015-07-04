@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/Tenderfeel/MobMap/issues"
   },
-  "homepage": "https://github.com/Tenderfeel/MobMap#readme"
+  "homepage": "https://github.com/Tenderfeel/MobMap#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
