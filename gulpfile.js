@@ -10,34 +10,57 @@ var runSequence = require('run-sequence');
 //Time-saving synchronised browser testing.
 var browserSync = require('browser-sync');
 
+var webpack = require('webpack');
 
-
-gulp.task('minify', function() {
+gulp.task('html', function() {
   return gulp.src('src/*.html')
     .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
 });
 
+gulp.task('script', function() {
+  webpack({
+     entry: {
+        main: ["./src/js/main.js"]
+      },
+      output: {
+        path:"./dist/js",
+        filename: "[name].js"
+      },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('main','main.js')
+    ]
+   }, function(err, stats) {
+        if(err) throw new gutil.PluginError("webpack", err);
+    })
+
+});
 
 gulp.task('watch', function(){
   gulp.watch(['src/**/*.html'], ['minify']);
 });
 
-// Build and serve the output from the dist build
 gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
     logPrefix: 'MM',
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
-    server: 'src'
+    server:"src"
   });
 
   gulp.watch(['src/**/*.html'], browserSync.reload);
 });
 
+gulp.task('serve:dist', function () {
+  browserSync({
+    server:"dist",
+    notify: false,
+    logPrefix: 'MM'
+  });
+
+  gulp.watch(['dist/**/*.js'], browserSync.reload);
+  gulp.watch(['dist/**/*.html'], browserSync.reload);
+});
+
 gulp.task('default', function() {
-  runSequence('minify');
+  runSequence('html');
 });
