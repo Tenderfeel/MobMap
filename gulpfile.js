@@ -20,7 +20,11 @@ gulp.task('html', function() {
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('script', function() {
+/*
+webpack
+http://webpack.github.io/docs/
+*/
+gulp.task('webpack', function() {
   webpack({
      entry: {
         main: ["./src/js/main.js"],
@@ -33,16 +37,18 @@ gulp.task('script', function() {
       },
       resolve: {
         modulesDirectories: ['node_modules'],
-        //aliasを貼るとrequire('TweenMax');のようにパス無しでつかえる
+        //aliasを貼るとrequire('jquery');のようにパス無しでつかえる
         alias: {
-            'jquery': node_dir + '/jquery/dist/jquery.js'
+            'jquery': node_dir + '/jquery/dist/jquery.js',
+            'underscore': node_dir + '/underscore/underscore.js',
+            'backbone': node_dir + '/backbone/backbone.js'
         }
       }
     // ,externals: {
     //   'jquery': 'jQuery'
     // }
     ,plugins: [
-        //<script>で読み込む順番にしないと"webpackJsonp"がないエラー出る
+        //<script>で読み込む順番にしないと"webpackJsonp"がないエラー出る・・・
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
         new webpack.optimize.CommonsChunkPlugin('main','main.js'),
         // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
@@ -53,6 +59,13 @@ gulp.task('script', function() {
              _: 'underscore',
             Backbone: 'backbone'
         })
+        //Minimize all JavaScript output of chunks
+        //圧縮ここでやるお
+        ,new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
    }, function(err, stats) {
         if(err) throw new gutil.PluginError("webpack", err);
@@ -60,10 +73,17 @@ gulp.task('script', function() {
 
 });
 
+/*
+ファイル監視
+*/
 gulp.task('watch', function(){
   gulp.watch(['src/**/*.html'], ['minify']);
+  gulp.watch(['src/**/*.js'], ['script']);
 });
 
+/*
+browserSync
+*/
 gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
