@@ -2,5 +2,8 @@
     'use strict';
 
     var Router = require('./routers/Router');
-    Router('test');
+
+    $('body').append(Router('test'));
+
+
 })();
