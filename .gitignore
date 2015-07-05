@@ -42,6 +42,3 @@ node_modules
 
 
 .gitconfig
-
-# output directory 
-dist
