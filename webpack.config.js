@@ -4,8 +4,7 @@ var webpack = require('webpack');
 
 module.exports = {
    entry: {
-      main: ["./src/js/main.js"],
-      vendor: ['jquery']
+      main: ["./src/js/main.js"]
     },
     //出力されるファイル
     output: {
@@ -21,12 +20,14 @@ module.exports = {
           'backbone': node_dir + '/backbone/backbone.js'
       }
     }
-  // ,externals: {
-  //   'jquery': 'jQuery'
-  // }
+  ,externals: {
+    'jquery': 'jQuery',
+    'backbone': 'Backbone',
+    'underscore': 'underscore'
+  }
   ,plugins: [
       //<script>で読み込む順番にしないと"webpackJsonp"がないエラー出る・・・
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
+    //  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new webpack.optimize.CommonsChunkPlugin('main','main.js'),
       // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
       new webpack.optimize.DedupePlugin()

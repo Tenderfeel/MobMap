@@ -1,8 +1,8 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    var Router = require('./routers/Router');
+  var Router = require('./routers/Router');
 
-    window.router = new Router();
+  window.router = new Router();
 
 })();
