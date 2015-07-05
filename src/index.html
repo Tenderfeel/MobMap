@@ -12,8 +12,7 @@
   </div>
 
   <div role="main" class="ui-content">
-   <div class="arealist">
-   </div>
+   <div id="home-arealist" class="arealist"></div>
    <div class="ui-grid-b" id="arealist-console">
      <div class="ui-block-a"><p class="ui-bar ui-bar-c ui-corner-all ui-mini arealist-counter">Selected: 0</p></div>
      <div class="ui-block-b"></div>
@@ -80,6 +79,18 @@
       </div>
     </div>
 </div>
+
+<script type="text/x-handlebars-template" id="area-template">
+  <h3 class="name">
+    {{name}}
+    		{{#if count}}<span class="ui-li-count">{{count}}</span>{{/if}}
+  </h3>
+  <ul class="mobs" data-role="listview" data-inset="false"></ul>
+</script>
+
+<script type="text/x-handlebars-template" id="mob-template">
+  <a class="ui-btn">{{name}}</a>
+</script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script>

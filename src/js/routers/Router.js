@@ -3,6 +3,8 @@
 var HomeView = require('../views/HomeView');
 var DefaultView = require('../views/DefaultView');
 var MapView = require('../views/MapView');
+var Data = require('../data');
+var AreaCollection = require('../collections/AreaCollection');
 
 module.exports = Backbone.Router.extend({
 
@@ -13,7 +15,9 @@ module.exports = Backbone.Router.extend({
   },
 
   initialize: function() {
-    this.homeView = new HomeView();
+
+    this.areaCollection = new AreaCollection(Data);
+    this.homeView = new HomeView({areaCollection: this.areaCollection});
     this.defaultView = new DefaultView();
     this.mapView = new MapView();
 
@@ -23,6 +27,8 @@ module.exports = Backbone.Router.extend({
   },
 
   homePage: function() {
+    this.homeView.render();
+    
     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#home", {
        reverse: true, changeHash: false} );
   },

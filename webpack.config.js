@@ -13,12 +13,12 @@ module.exports = {
     },
     resolve: {
       modulesDirectories: ['node_modules'],
-      //aliasを貼るとrequire('jquery');のようにパス無しでつかえる
-      alias: {
-          'jquery': node_dir + '/jquery/dist/jquery.js',
-          'underscore': node_dir + '/underscore/underscore.js',
-          'backbone': node_dir + '/backbone/backbone.js'
-      }
+      // //aliasを貼るとrequire('jquery');のようにパス無しでつかえる
+      // alias: {
+      //     'jquery': node_dir + '/jquery/dist/jquery.js',
+      //     'underscore': node_dir + '/underscore/underscore.js',
+      //     'backbone': node_dir + '/backbone/backbone.js'
+      // }
     }
   ,externals: {
     'jquery': 'jQuery',
@@ -32,11 +32,11 @@ module.exports = {
       // ライブラリ間で依存しているモジュールが重複している場合、二重に読み込まないようにする
       new webpack.optimize.DedupePlugin()
       //グローバルに出す設定。requireせず使えるようになる
-      ,new webpack.ProvidePlugin({
-          $: 'jquery',
-           _: 'underscore',
-          Backbone: 'backbone'
-      })
+      // ,new webpack.ProvidePlugin({
+      //     $: 'jquery',
+      //      '_': 'underscore',
+      //     Backbone: 'backbone'
+      // })
       //Minimize all JavaScript output of chunks
       //圧縮ここでやるお
       ,new webpack.optimize.UglifyJsPlugin({
