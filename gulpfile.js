@@ -36,8 +36,8 @@ gulp.task('webpack', function() {
 ファイル監視
 */
 gulp.task('watch', function(){
-  gulp.watch(['src/**/*.html'], ['minify']);
-  gulp.watch(['src/**/*.js'], ['script']);
+  gulp.watch(['src/**/*.html'], ['html']);
+  gulp.watch(['src/**/*.js'], ['webpack']);
 });
 
 /*
@@ -63,6 +63,7 @@ gulp.task('serve:dist', function () {
   gulp.watch(['dist/**/*.js'], browserSync.reload);
   gulp.watch(['dist/**/*.html'], browserSync.reload);
 });
+
 
 gulp.task('default', function() {
   runSequence('html');
