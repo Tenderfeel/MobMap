@@ -9,7 +9,7 @@
       mobs: []
     },
     initialize: function() {
-       this.mobCollection = new MobCollection(this.get('mobs'));
+      this.mobCollection = new MobCollection(this.get('mobs'));
     }
   });
 

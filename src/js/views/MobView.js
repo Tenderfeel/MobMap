@@ -17,8 +17,8 @@
     events: {
        'click': 'handleClick'
      },
-     
-    initialize: function(options) {
+
+    initialize: function initialize(options) {
 
       this.model = options.model;
       this.activeClass = options.activeClass || false;
@@ -26,7 +26,7 @@
       this.model.on('change', this.handleChange, this);
     },
 
-    render: function() {
+    render: function render() {
       var html = this.template(this.model.toJSON());
       this.$el.attr({
               'data-id': this.model.get('id')
@@ -34,7 +34,7 @@
       return this;
     },
 
-    handleChange: function() {
+    handleChange: function handleChange() {
       if ( this.activeClass ) {
         this.$el.find('.ui-btn')
               .toggleClass('ui-btn-active', this.model.get('selected'));
@@ -44,7 +44,7 @@
     /*
       Handling Click Event
     */
-    handleClick: function() {
+    handleClick: function handleClick() {
       this.model.set('selected', !this.model.get('selected'));
     }
   });
