@@ -30,25 +30,26 @@ Template:
 
     initialize: function(options){
       console.log('[initialize] AreaView -- '+ this.model.get('name'));
-      this.mobListViews = [];
+      this.mobViews = [];
       //選択されたモブだけ表示する
       this.selectedOnly = options.selectedOnly || false;
+      this.mobCollection = options.mobCollection;
 
     },
 
     render: function() {
       var data = this.model.toJSON();
       var html = this.template(data);
-      var mobCollection = this.model.mobCollection;
       this.$el.attr(this.attr).html(html);
 
       var $mobList = this.$el.find('.mobs');
 
-      mobCollection.each(function(mob) {
+      _.each(this.model.get('mobs'), function(mob) {
+          var model = this.mobCollection.get(mob);
         //if (this.selectedOnly && mob.get('selected') || !this.selectedOnly) {
-          var view = new MobView({model:mob, activeClass: (this.selectedOnly? false : true) });
+          var view = new MobView({model:model, activeClass: (this.selectedOnly? false : true) });
           $mobList.append(view.render().$el);
-          this.mobListViews.push(view);
+          this.mobViews.push(view);
         //}
       }, this);
       return this;

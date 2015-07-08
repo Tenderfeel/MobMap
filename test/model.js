@@ -51,15 +51,10 @@ describe('AreaModel', function(){
       assert.equal('object', typeof model.get('pos'));
     });
 
-    it('should return array Area Mobs', function() {
-      assert.equal('object', typeof model.get('mobs'));
+    it('should return array Area Mob', function() {
+      assert.equal('object', typeof model.get('mob'));
     });
 
-    it('MobCollection is must be created in the initialization', function(){
-        var collection = model.mobCollection;
-        assert.equal('object', typeof model.mobCollection);
-        assert.equal('object', typeof collection.get(1), 'MobCollection is must be array MobModel')
-    });
 
   });
 

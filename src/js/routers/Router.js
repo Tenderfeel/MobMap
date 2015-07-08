@@ -5,6 +5,7 @@ var DefaultView = require('../views/DefaultView');
 var MapView = require('../views/MapView');
 var Data = require('../data');
 var AreaCollection = require('../collections/AreaCollection');
+var MobCollection = require('../collections/MobCollection');
 var CountModel = require('../models/CountModel');
 
 module.exports = Backbone.Router.extend({
@@ -18,24 +19,15 @@ module.exports = Backbone.Router.extend({
   initialize: function() {
 
     //global model
-    this.totalTargetCount = new CountModel({
-        total: 0,
-        area: {
-          1: 0,
-          2: 0,
-          3: 0,
-          4: 0,
-          5: 0,
-          6: 0
-        }
-      });
-
+    
     //global collection
-    this.areaCollection = new AreaCollection(Data);
+    this.areaCollection = new AreaCollection(Data.area);
+    this.mobCollection = new MobCollection(Data.mob);
 
     //views
     this.homeView = new HomeView({
       areaCollection: this.areaCollection,
+      mobCollection: this.mobCollection
       //totalTargetCount: this.totalTargetCount
     });
     this.defaultView = new DefaultView();

@@ -24,7 +24,8 @@
 
       console.log('[initialize] AreaListView');
 
-      this.areaCollection = opt.areaCollection;
+      this.areaCollection = opt.areaCollection || {};
+      this.mobCollection = opt.mobCollection || {};
 
       this.collectionViews = [];
 
@@ -38,7 +39,7 @@
 
       if ( !this.collectionViews.length ) {
         this.areaCollection.each(function(dat) {
-          var view = new AreaView({model: dat});
+          var view = new AreaView({model: dat, mobCollection: this.mobCollection});
             this.collectionViews.push(view);
             this.$el.append(view.render().el);
         }, this);

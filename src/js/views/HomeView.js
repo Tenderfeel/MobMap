@@ -11,19 +11,21 @@
       this.$counter = this.$consol.find('.arealist-counter');
       this.$resetBtn = this.$consol.find('.btn-reset');
 
+      this.areaCollection = opt.areaCollection || {}
+      this.mobCollection = opt.mobCollection || {};
 
       this.AreaListView = new AreaListView({
         el:this.$arealist,
-        areaCollection: opt.areaCollection
+        areaCollection: this.areaCollection,
+        mobCollection: this.mobCollection
       });
 
       this.AreaListView.on('click', function() {
         console.log(this)
       });
 
-      //this.totalTargetCount = opt.totalTargetCount;
 
-      //opt.totalTargetCount.on('change:total', this.handleChangeTargetCount, this);
+      this.mobCollection.on('change:selected', this.handleChangeTargetCount, this);
     },
 
     render: function render() {
@@ -32,7 +34,7 @@
 
     handleChangeTargetCount: function handleChangeTargetCount() {
 
-      var total = this.totalTargetCount.get('total');
+      var total = this.mobCollection.selected.total;
       this.$counter.html('Selected: ' + total);
       this.$resetBtn.toggleClass('ui-disabled', !total);
     }
