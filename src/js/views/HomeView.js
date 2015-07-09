@@ -20,10 +20,6 @@
         mobCollection: this.mobCollection
       });
 
-      this.AreaListView.on('click', function() {
-        console.log(this)
-      });
-
 
       this.mobCollection.on('change:selected', this.handleChangeTargetCount, this);
     },
@@ -32,8 +28,10 @@
       this.AreaListView.render();
     },
 
+    /*
+      Mobが選択された時、数に応じてカウンターとリセットボタンを変更する
+    */
     handleChangeTargetCount: function handleChangeTargetCount() {
-
       var total = this.mobCollection.selected.total;
       this.$counter.html('Selected: ' + total);
       this.$resetBtn.toggleClass('ui-disabled', !total);

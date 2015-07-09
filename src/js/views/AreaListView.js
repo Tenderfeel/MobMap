@@ -16,8 +16,9 @@
 
     attr: {
       // 'data-role':'collapsibleset',
-      'data-filter':true,
-      'data-inset':true
+      'data-filter': true,
+      'data-inset': true,
+      'data-children': "> div, > div div ul li"
     },
 
     initialize: function(opt) {

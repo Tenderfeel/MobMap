@@ -19,7 +19,7 @@ module.exports = Backbone.Router.extend({
   initialize: function() {
 
     //global model
-    
+
     //global collection
     this.areaCollection = new AreaCollection(Data.area);
     this.mobCollection = new MobCollection(Data.mob);
@@ -41,17 +41,17 @@ module.exports = Backbone.Router.extend({
   homePage: function() {
     this.homeView.render();
 
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", "#home", {
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", this.homeView.$el, {
        reverse: true, changeHash: false} );
   },
 
   defaultPage: function() {
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", "#default", {
+     $( ":mobile-pagecontainer" ).pagecontainer( "change", this.defaultView.$el, {
         reverse: false, changeHash: false } );
   },
 
   mapPage: function() {
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", "#map", {
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", this.mapView.$el, {
        reverse: false,  changeHash: false } );
   }
 });
