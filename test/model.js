@@ -52,7 +52,7 @@ describe('AreaModel', function(){
     });
 
     it('should return array Area Mob', function() {
-      assert.equal('object', typeof model.get('mob'));
+      assert.equal('object', typeof model.get('mobs'));
     });
 
 

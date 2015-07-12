@@ -12,11 +12,12 @@ module.exports = Backbone.Router.extend({
 
   routes: {
     '': 'homePage',
+    'home': 'homePage',
     "default": "defaultPage",
     "map": "mapPage"
   },
 
-  initialize: function() {
+  initialize: function initialize() {
 
     //global model
 
@@ -28,9 +29,15 @@ module.exports = Backbone.Router.extend({
     this.homeView = new HomeView({
       areaCollection: this.areaCollection,
       mobCollection: this.mobCollection
-      //totalTargetCount: this.totalTargetCount
     });
-    this.defaultView = new DefaultView();
+
+    this.defaultView = new DefaultView({
+      areaCollection: this.areaCollection,
+      mobCollection: this.mobCollection
+    });
+
+    this.showHome = false;
+
     this.mapView = new MapView();
 
     console.log('Welcome!!');
@@ -38,20 +45,43 @@ module.exports = Backbone.Router.extend({
     Backbone.history.start();
   },
 
-  homePage: function() {
-    this.homeView.render();
+  // execute: function execute(callback, args, name)  {
+  //   console.log('execute!')
+  //   if (callback) callback.apply(this, args);
+  // },
 
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", this.homeView.$el, {
+  homePage: function homePage() {
+    this.homeView.render();
+    this.showHome = true;
+
+    $( ":mobile-pagecontainer" ).pagecontainer( "change",
+       this.homeView.$el, {
        reverse: true, changeHash: false} );
   },
 
-  defaultPage: function() {
-     $( ":mobile-pagecontainer" ).pagecontainer( "change", this.defaultView.$el, {
+  defaultPage: function defaultPage() {
+
+    if ( !this.showHome ) {
+      this.navigate('', {trigger: true, replace: true});
+      return this;
+    }
+
+    this.defaultView.render();
+
+     $( ":mobile-pagecontainer" ).pagecontainer( "change",
+        this.defaultView.$el, {
         reverse: false, changeHash: false } );
   },
 
-  mapPage: function() {
-    $( ":mobile-pagecontainer" ).pagecontainer( "change", this.mapView.$el, {
+  mapPage: function mapPage() {
+
+    if ( !this.showHome ) {
+      this.navigate('', {trigger: true, replace: true});
+      return this;
+    }
+
+    $( ":mobile-pagecontainer" ).pagecontainer( "change",
+       this.mapView.$el, {
        reverse: false,  changeHash: false } );
   }
 });

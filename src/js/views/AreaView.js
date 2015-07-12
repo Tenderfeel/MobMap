@@ -32,25 +32,35 @@ Template:
       console.log('[initialize] AreaView -- '+ this.model.get('name'));
       this.mobViews = [];
       //選択されたモブだけ表示する
-      this.selectedOnly = options.selectedOnly || false;
+      this.selectedOnly = options.selectedOnly;
       this.mobCollection = options.mobCollection;
 
     },
 
     render: function() {
-      var data = this.model.toJSON();
-      var html = this.template(data);
+      var self = this,
+          data = this.model.toJSON(),
+          html = this.template(data);
+
+      if( this.selectedOnly
+          && !this.mobCollection.selected.area[this.model.get('id')] ) {
+        return this;
+      }
+
       this.$el.attr(this.attr).html(html);
 
       var $mobList = this.$el.find('.mobs');
 
       _.each(this.model.get('mobs'), function(mob) {
           var model = this.mobCollection.get(mob);
-        //if (this.selectedOnly && mob.get('selected') || !this.selectedOnly) {
-          var view = new MobView({model:model, activeClass: (this.selectedOnly? false : true) });
+        if (this.selectedOnly
+            && model.get('selected') || !self.selectedOnly) {
+          var view = new MobView({
+            model:model,
+            activeClass: (self.selectedOnly? false : true) });
           $mobList.append(view.render().$el);
           this.mobViews.push(view);
-        //}
+        }
       }, this);
       return this;
     }

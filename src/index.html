@@ -25,9 +25,9 @@
   <div data-role="footer">
     <div data-role="navbar">
       <ul>
-          <li><a href="#default" class="ui-btn" data-id="default">List + Map</a></li>
+          <li><span class="ui-btn btn-nav" data-href="default">List</span></li>
 
-          <li><a href="#map" class="ui-btn" data-id="map">Map Only</a></li>
+          <li><span class="ui-btn btn-nav" data-href="map">Map</span></li>
        </ul>
     </div>
   </div>
@@ -39,19 +39,17 @@
     <h1>Default</h1>
   </div>
 
-
   <div role="main" class="ui-content">
-    <div class="arealist">
+    <div class="arealist" id="default-arealist">
     </div>
   </div>
 
-
-  	<div data-role="footer">
+	<div data-role="footer">
     <div data-role="navbar">
       <ul>
-         <li><a href="#" class="ui-icon-carat-l ui-btn-icon-left" data-rel="back">Home</a></li>
+         <li><span class="ui-btn ui-icon-carat-l ui-btn-icon-left btn-nav" data-href="home">Home</span></li>
 
-          <li><a href="#map" class="ui-btn" data-id="map">Map Only</a></li>
+          <li><span class="ui-btn btn-nav" data-href="map">Map</span></li>
        </ul>
     </div>
   </div>
@@ -72,9 +70,9 @@
     	<div data-role="footer">
       <div data-role="navbar">
         <ul>
-           <li><a href="#" class="ui-icon-carat-l ui-btn-icon-left" data-rel="back">Home</a></li>
+           <li><span class="ui-btn ui-icon-carat-l ui-btn-icon-left btn-nav" data-href="home">Home</span></li>
 
-            <li><a href="#default" class="ui-btn" data-id="default">List + Map</a></li>
+            <li><span class="ui-btn btn-nav" data-span="default">List</span></li>
          </ul>
       </div>
     </div>

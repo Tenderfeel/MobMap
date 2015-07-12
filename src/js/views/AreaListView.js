@@ -15,7 +15,7 @@
   module.exports = Backbone.View.extend({
 
     attr: {
-      // 'data-role':'collapsibleset',
+      'data-role':'collapsibleset',
       'data-filter': true,
       'data-inset': true,
       'data-children': "> div, > div div ul li"
@@ -27,6 +27,7 @@
 
       this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
+      this.selectedOnly = opt.selectedOnly;
 
       this.collectionViews = [];
 
@@ -37,10 +38,20 @@
 
     render: function() {
       console.log('[render] AreaListView');
+      var self = this;
+
+      if ( this.selectedOnly && !this.mobCollection.selected.total ) {
+        this.$el.html('<p>モブが選択されていません</p>');
+        return this;
+      }
 
       if ( !this.collectionViews.length ) {
         this.areaCollection.each(function(dat) {
-          var view = new AreaView({model: dat, mobCollection: this.mobCollection});
+          var view = new AreaView({
+              model: dat,
+              mobCollection: self.mobCollection,
+              selectedOnly: self.selectedOnly
+           });
             this.collectionViews.push(view);
             this.$el.append(view.render().el);
         }, this);

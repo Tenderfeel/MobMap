@@ -5,6 +5,10 @@
   module.exports = Backbone.View.extend({
     el: "#home",
 
+    events: {
+      'click .btn-nav': 'handleNav'
+    },
+
     initialize: function initialize(opt) {
       this.$arealist = this.$el.find('#home-arealist');
       this.$consol = this.$el.find('#arealist-console');
@@ -20,8 +24,19 @@
         mobCollection: this.mobCollection
       });
 
+      this.$navBtns = this.$el.find('.btn-nav');
+      this.$navBtns.addClass('ui-disabled');
 
       this.mobCollection.on('change:selected', this.handleChangeTargetCount, this);
+    },
+
+    handleNav: function handleNav(e) {
+
+      var href = e.target.getAttribute('data-href');
+
+
+      window.router.navigate(href, {trigger: true});
+
     },
 
     render: function render() {
@@ -29,12 +44,14 @@
     },
 
     /*
-      Mobが選択された時、数に応じてカウンターとリセットボタンを変更する
+      Mobが選択された時、数に応じてカウンター・リセットボタン・フッターボタンを変更する
     */
     handleChangeTargetCount: function handleChangeTargetCount() {
       var total = this.mobCollection.selected.total;
       this.$counter.html('Selected: ' + total);
       this.$resetBtn.toggleClass('ui-disabled', !total);
+
+      this.$navBtns.toggleClass('ui-disabled', !total);
     }
   });
 
