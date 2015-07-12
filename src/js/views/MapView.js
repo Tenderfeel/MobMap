@@ -8,6 +8,10 @@
     },
 
     initialize: function initialize(opt) {
+      this.areaCollection = opt.areaCollection || {};
+      this.mobCollection = opt.mobCollection || {};
+
+      this.$maplist = this.$el.find('#maplist');
     },
 
     handleNav: function handleNav(e) {

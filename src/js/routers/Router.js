@@ -19,7 +19,7 @@ module.exports = Backbone.Router.extend({
 
   initialize: function initialize() {
 
-    //global model
+    this.showHome = false;
 
     //global collection
     this.areaCollection = new AreaCollection(Data.area);
@@ -36,9 +36,10 @@ module.exports = Backbone.Router.extend({
       mobCollection: this.mobCollection
     });
 
-    this.showHome = false;
-
-    this.mapView = new MapView();
+    this.mapView = new MapView({
+      areaCollection: this.areaCollection,
+      mobCollection: this.mobCollection
+    });
 
     console.log('Welcome!!');
 
