@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="582" height="582" viewBox="0 0 582 582">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: red;
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3, .cls-4, .cls-7, .cls-9 {
+        font-size: 10px;
+      }
+
+      .cls-4, .cls-6, .cls-7, .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-6, .cls-8 {
+        font-weight: bold;
+      }
+
+      .cls-5, .cls-6 {
+        font-size: 14px;
+      }
+
+      .cls-7 {
+      }
+
+      .cls-9 {
+      }
+    </style>
+  </defs>
+  <g>
+    <ellipse cx="256.5" cy="412" rx="29.5" ry="46" class="cls-1"/>
+    <path d="M368.240,326.143 C393.938,319.636 423.618,349.299 434.531,392.398 C445.445,435.496 433.459,475.710 407.760,482.217 C382.062,488.725 352.382,459.062 341.469,415.963 C330.555,372.864 342.541,332.651 368.240,326.143 Z" class="cls-2"/>
+    <ellipse cx="294" cy="476" rx="17" ry="18" class="cls-1"/>
+    <ellipse cx="406.5" cy="385.5" rx="43.5" ry="41.5" class="cls-1"/>
+    <path d="M264.628,456.655 C281.492,443.705 297.345,436.048 300.036,439.552 C302.727,443.056 291.237,456.395 274.372,469.345 C257.508,482.295 241.655,489.952 238.964,486.448 C236.273,482.944 247.763,469.605 264.628,456.655 Z" class="cls-2"/>
+    <circle cx="442" cy="325" r="28" class="cls-1"/>
+    <path d="M320.500,288.000 C340.658,288.000 397.000,286.088 397.000,301.000 C397.000,315.912 337.158,341.000 317.000,341.000 C296.842,341.000 276.000,329.912 276.000,315.000 C276.000,300.088 300.342,288.000 320.500,288.000 Z" class="cls-2"/>
+    <ellipse cx="501.5" cy="342.5" rx="25.5" ry="26.5" class="cls-1"/>
+    <ellipse cx="471" cy="241.5" rx="28" ry="38.5" class="cls-1"/>
+    <ellipse cx="484" cy="163.5" rx="31" ry="33.5" class="cls-1"/>
+    <ellipse cx="404.5" cy="84.5" rx="56.5" ry="34.5" class="cls-1"/>
+    <ellipse cx="478.5" cy="105" rx="22.5" ry="27" class="cls-1"/>
+    <ellipse cx="409.5" cy="156" rx="51.5" ry="36" class="cls-1"/>
+    <path d="M383.000,198.000 C407.304,170.098 445.000,204.595 445.000,230.000 C445.000,255.405 436.003,289.000 399.000,289.000 C361.997,289.000 318.331,298.567 319.000,273.000 C319.513,253.412 355.997,229.000 383.000,198.000 Z" class="cls-2"/>
+    <circle cx="317.5" cy="414.5" r="30.5" class="cls-1"/>
+    <circle cx="300" cy="366" r="26" class="cls-1"/>
+    <path d="M222.033,331.693 C237.887,335.448 245.425,360.928 238.870,388.605 C232.314,416.282 214.148,435.675 198.294,431.920 C182.440,428.165 174.903,402.684 181.458,375.007 C188.013,347.330 206.180,327.938 222.033,331.693 Z" class="cls-2"/>
+    <path d="M246.074,284.573 C258.243,307.196 258.054,330.944 245.651,337.616 C233.249,344.287 213.329,331.356 201.160,308.733 C188.990,286.111 189.179,262.363 201.582,255.691 C213.985,249.019 233.904,261.950 246.074,284.573 Z" class="cls-2"/>
+    <ellipse cx="272" cy="268.5" rx="28" ry="29.5" class="cls-1"/>
+    <ellipse cx="129" cy="236.5" rx="25" ry="32.5" class="cls-1"/>
+    <ellipse cx="104" cy="171.5" rx="45" ry="40.5" class="cls-1"/>
+    <ellipse cx="180.5" cy="91.5" rx="29.5" ry="31.5" class="cls-1"/>
+    <ellipse cx="228" cy="154" rx="77" ry="37" class="cls-1"/>
+    <ellipse cx="261.5" cy="102" rx="42.5" ry="18" class="cls-1"/>
+    <ellipse cx="330.5" cy="127" rx="26.5" ry="25" class="cls-1"/>
+    <ellipse cx="332.5" cy="203" rx="38.5" ry="51" class="cls-1"/>
+    <ellipse cx="123.5" cy="112.5" rx="32.5" ry="29.5" class="cls-1"/>
+    <ellipse cx="235" cy="213.5" rx="55" ry="28.5" class="cls-1"/>
+    <ellipse cx="165" cy="296" rx="31" ry="32" class="cls-1"/>
+  </g>
+  <g>
+    <text x="501" y="349" class="cls-3"><tspan class="cls-4">ナインスヴェアー</tspan></text>
+    <text x="212" y="400" class="cls-3"><tspan class="cls-4">スウィフトラン川</tspan></text>
+    <text x="343" y="284" class="cls-3"><tspan class="cls-4">ブラックアイアン・ブリッジ</tspan></text>
+    <text x="266" y="335" class="cls-3"><tspan class="cls-4">キャンプ・リバーズミート</tspan></text>
+    <text x="227" y="293" class="cls-3"><tspan class="cls-4">ザ・ウォッチャー</tspan></text>
+    <text x="457" y="246" class="cls-3"><tspan class="cls-4">ヘムロック</tspan></text>
+    <text x="455" y="135" class="cls-3"><tspan class="cls-4">オーカム波止場</tspan></text>
+    <text x="389" y="83" class="cls-3"><tspan class="cls-4">ノーススター号</tspan></text>
+    <text x="384" y="151" class="cls-3"><tspan class="cls-4">ゴルガニュ牧場</tspan></text>
+    <text x="241" y="118" class="cls-3"><tspan class="cls-4">ベーンプール</tspan></text>
+    <text x="318" y="161" class="cls-3"><tspan class="cls-4">クルザス川</tspan></text>
+    <text x="382" y="172" class="cls-3"><tspan class="cls-4">ゴルガニュ牧草地</tspan></text>
+    <text x="127" y="69" class="cls-3"><tspan class="cls-4">スレート連峰</tspan></text>
+    <text x="77" y="134" class="cls-3"><tspan class="cls-4">ドラゴンスピット</tspan></text>
+    <text x="22" y="182" class="cls-5"><tspan class="cls-6">ツインプールズ</tspan></text>
+    <text x="142" y="447" class="cls-5"><tspan class="cls-6">レッドリム</tspan></text>
+    <text x="440" y="422" class="cls-5"><tspan class="cls-6">リバーズミート</tspan></text>
+    <text x="115" y="232" class="cls-3"><tspan class="cls-3"><tspan class="cls-7">臥<tspan class="cls-8">龍島</tspan></tspan></tspan></text>
+    <text x="94" y="256" class="cls-3"><tspan class="cls-9">アッシュプール</tspan></text>
+    <text x="165" y="273" class="cls-3"><tspan class="cls-9">聖フィネア連隊の露営地</tspan></text>
+    <text x="247" y="435" class="cls-3"><tspan class="cls-4">イエティの住処</tspan></text>
+    <text x="337" y="380" class="cls-3"><tspan class="cls-4">金床の塔</tspan></text>
+    <text x="414" y="385" class="cls-3"><tspan class="cls-4">ハルドラス像</tspan></text>
+    <text x="444" y="369" class="cls-3"><tspan class="cls-4">グレイテール滝</tspan></text>
+    <text x="443" y="329" class="cls-3"><tspan class="cls-4">異端者の坑道</tspan></text>
+  </g>
+</svg>
