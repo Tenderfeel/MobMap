@@ -48,3 +48,6 @@ dist
 
 # windows local batch file
 *.bat
+
+# JetBrains
+.idea
