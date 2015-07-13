@@ -50,4 +50,7 @@ dist
 *.bat
 
 # JetBrains
-.idea
+*.iml
+*.ipr
+*.iws
+.idea/
