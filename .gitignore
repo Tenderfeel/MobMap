@@ -43,8 +43,6 @@ node_modules
 # setting
 .gitconfig
 
-# publish directory
-dist
 
 # windows local batch file
 *.bat
