@@ -13,11 +13,22 @@ var browserSync = require('browser-sync');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 
+var pngquant = require('imagemin-pngquant');
+
 
 gulp.task('html', function() {
   return gulp.src('src/*.html')
     .pipe($.htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
+});
+
+gulp.task('image', function () {
+    return gulp.src('src/images/**/*.+(jpg|png|gif)')
+        .pipe($.imagemin({
+            progressive: true,
+            use: [pngquant({quality: '60-80', speed: 1})]
+        }))
+        .pipe(gulp.dest('dist/images'));
 });
 
 /*
