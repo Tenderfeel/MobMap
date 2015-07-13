@@ -3,7 +3,7 @@
   /*
   Mob Model View
 
-  表向き表示されるのはモンスターの名前のみ
+  モンスターのビュー
 
   <script type="text/x-handlebars-template" id="mob-template">
     <a class="ui-btn">{{name}}</a>
@@ -18,10 +18,11 @@
        'click': 'handleClick'
      },
 
-    initialize: function initialize(options) {
+    initialize: function initialize(opt) {
 
-      this.model = options.model;
-      this.activeClass = options.activeClass || false;
+      //this.model = opt.model;
+      this.activeClass = opt.activeClass || false;
+      this.posData = opt.posData;
 
       this.model.on('change', this.handleChange, this);
     },
@@ -31,6 +32,11 @@
       this.$el.attr({
               'data-id': this.model.get('id')
             }).html(html);
+
+      if ( this.posData ) {
+        this.$el.append('<p class="ui-li-aside">' + this.posData.name
+            + ' (' + this.posData.x + ',' + this.posData.y + ')</p>');
+      }
       return this;
     },
 

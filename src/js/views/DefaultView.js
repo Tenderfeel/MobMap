@@ -2,6 +2,10 @@
 
   var AreaListView = require('../views/AreaListView');
 
+  /**
+   * DefaultView
+   * @type {*}
+   */
   module.exports = Backbone.View.extend({
     el: "#default",
 

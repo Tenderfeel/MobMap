@@ -52,18 +52,32 @@ Template:
       var $mobList = this.$el.find('.mobs');
 
       _.each(this.model.get('mobs'), function(mob) {
-          var model = this.mobCollection.get(mob);
+          var view,
+              model = this.mobCollection.get(mob),
+              posData = this._getMobPosition(_.first(model.get('pos')));
+
+
+        //選択されたモブのみ表示 or 全表示の場合
         if (this.selectedOnly
             && model.get('selected') || !self.selectedOnly) {
-          var view = new MobView({
+          view = new MobView({
             model:model,
-            activeClass: (self.selectedOnly? false : true) });
+            posData: (self.selectedOnly? posData : null),
+            activeClass: (self.selectedOnly? false : true)
+          });
           $mobList.append(view.render().$el);
           this.mobViews.push(view);
         }
+
       }, this);
       return this;
+    },
+
+    _getMobPosition: function _getMobPosition(posId) {
+      return _.findWhere(this.model.get('pos'), {id: posId});
     }
+
+
   });
 
 })();

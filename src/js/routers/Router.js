@@ -81,6 +81,8 @@ module.exports = Backbone.Router.extend({
       return this;
     }
 
+    this.mapView.render();
+
     $( ":mobile-pagecontainer" ).pagecontainer( "change",
        this.mapView.$el, {
        reverse: false,  changeHash: false } );
