@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet prefetch' href='//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css'>
   <style type="text/css">
+    html, body {background-color: rgb(37, 37, 37);}
     .map {
       position: relative;
       width: 100%;
@@ -53,7 +54,7 @@
 
   </style>
 </head>
-<body>
+<body class="ui-overlay-b">
 <div id="home" data-role="page" data-title="MobMap" class="ui-page-theme-b">
   <div data-role="header" data-position="fixed">
     <h1>MobMap</h1>
@@ -114,6 +115,7 @@
   <div role="main" class="ui-content">
     <div class="maplist">
       <div class="map" id="map-1">
+        <p>クルザス西部高地</p>
         <img class="map-base" src="images/map/1.jpg" alt=""/>
 
         <svg class="map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -203,6 +205,7 @@
     $.mobile.hashListeningEnabled = false;
     $.mobile.pushStateEnabled = false;
     $.mobile.defaultPageTransition = 'slide';
+    $.mobile.popup.prototype.options.overlayTheme = "b";
   });
 </script>
 <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
