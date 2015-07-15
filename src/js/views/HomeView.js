@@ -6,7 +6,8 @@
     el: "#home",
 
     events: {
-      'click .btn-nav': 'handleNav'
+      'click .btn-nav': 'handleNav',
+      'click .btn-reset': 'handleReset'
     },
 
     initialize: function initialize(opt) {
@@ -37,6 +38,15 @@
 
       window.router.navigate(href, {trigger: true});
 
+    },
+
+    /**
+     * リセットボタンが押された
+     */
+    handleReset: function handleReset() {
+      this.mobCollection.each(function(model) {
+        model.set('selected', false);
+      });
     },
 
     render: function render() {

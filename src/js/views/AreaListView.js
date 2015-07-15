@@ -36,7 +36,7 @@
 
     },
 
-    render: function() {
+    render: function render() {
       console.log('[render] AreaListView');
       var self = this;
 
@@ -56,7 +56,7 @@
             this.$el.append(view.render().el);
         }, this);
       }
-
+      return this;
     }
   });
 

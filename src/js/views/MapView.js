@@ -42,12 +42,15 @@
 
         _.each(areaModel.get('mobs'), function(mob) {
           var mobModel = self.mobCollection.get(mob);
-          if ( mobModel.get('selected') ) {
-            _.each(mobModel.get('pos'), function(pos) {
-              $('#map-' + areaModel.get('id') + '-' + pos).show();
-              //$mobList.append('<li>Lv.' + mobModel.get('lv') + ' ' + mobModel.get('name') + '</li>')
-            });
-          }
+
+          _.each(mobModel.get('pos'), function(pos) {
+            if ( mobModel.get('selected') ) {
+               $('#map-' + areaModel.get('id') + '-' + pos).show();
+            } else {
+               $('#map-' + areaModel.get('id') + '-' + pos).hide();
+            }
+                  //$mobList.append('<li>Lv.' + mobModel.get('lv') + ' ' + mobModel.get('name') + '</li>')
+          });
         });
       });
 
