@@ -16,19 +16,19 @@
       this.$counter = this.$consol.find('.arealist-counter');
       this.$resetBtn = this.$consol.find('.btn-reset');
 
-      this.areaCollection = opt.areaCollection || {}
+      this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
 
       this.AreaListView = new AreaListView({
         el:this.$arealist,
-        areaCollection: this.areaCollection,
+        collection: this.areaCollection,
         mobCollection: this.mobCollection
       });
 
       this.$navBtns = this.$el.find('.btn-nav');
       this.$navBtns.addClass('ui-disabled');
 
-      this.mobCollection.on('change:selected', this.handleChangeTargetCount, this);
+      this.listenTo(this.mobCollection, 'change:selected', this.handleChangeTargetCount, this);
     },
 
     handleNav: function handleNav(e) {

@@ -21,7 +21,7 @@
 
       this.AreaListView = new AreaListView({
         el:this.$arealist,
-        areaCollection: this.areaCollection,
+        collection: this.areaCollection,
         mobCollection: this.mobCollection,
         selectedOnly: true
       });
@@ -38,6 +38,14 @@
 
     render: function render() {
       this.AreaListView.render();
+    },
+
+    remove: function remove() {
+      this.AreaListView.remove();
+      delete this.AreaListView;
+      delete this.areaCollection;
+      delete this.mobCollection;
+      delete this.$arealist;
     }
 
   });

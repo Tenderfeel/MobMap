@@ -25,7 +25,7 @@
 
       console.log('[initialize] AreaListView');
 
-      this.areaCollection = opt.areaCollection || {};
+      //this.collection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
       this.selectedOnly = opt.selectedOnly;
 
@@ -46,7 +46,7 @@
       }
 
       if ( !this.collectionViews.length ) {
-        this.areaCollection.each(function(dat) {
+        this.collection.each(function(dat) {
           var view = new AreaView({
               model: dat,
               mobCollection: self.mobCollection,
@@ -57,6 +57,18 @@
         }, this);
       }
       return this;
+    },
+
+    remove: function remove() {
+      _.each(this.collectionViews, function(view) {
+        view.remove();
+      });
+
+      this.$el.empty();
+
+      delete this.collectionViews;
+      delete this.mobCollection;
+      delete this.selectedOnly;
     }
   });
 
