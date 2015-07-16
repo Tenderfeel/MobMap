@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="582" height="582" viewBox="0 0 582 582">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: red;
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g>
+    <ellipse cx="491" cy="297.5" rx="52" ry="96.5" class="cls-1"/>
+    <circle cx="501" cy="256" r="35" class="cls-1"/>
+    <ellipse cx="434.5" cy="199.5" rx="41.5" ry="56.5" class="cls-1"/>
+    <ellipse cx="505.5" cy="157" rx="26.5" ry="26" class="cls-1"/>
+    <ellipse cx="430" cy="82" rx="48" ry="45" class="cls-1"/>
+    <ellipse cx="359" cy="102.5" rx="26" ry="26.5" class="cls-1"/>
+    <ellipse cx="361" cy="179" rx="43" ry="45" class="cls-1"/>
+    <circle cx="337.5" cy="283.5" r="45.5" class="cls-1"/>
+    <circle cx="383.5" cy="329.5" r="30.5" class="cls-1"/>
+    <ellipse cx="368.5" cy="381" rx="34.5" ry="42" class="cls-1"/>
+    <ellipse cx="385.5" cy="419.5" rx="26.5" ry="25.5" class="cls-1"/>
+    <ellipse cx="376.5" cy="500" rx="60.5" ry="54" class="cls-1"/>
+    <path d="M349.750,331.443 C358.838,336.690 352.885,364.013 336.454,392.471 C320.024,420.930 299.338,439.747 290.250,434.500 C281.162,429.253 287.115,401.930 303.546,373.471 C319.976,345.013 340.662,326.196 349.750,331.443 Z" class="cls-2"/>
+    <circle cx="263" cy="469" r="28" class="cls-1"/>
+    <circle cx="150.5" cy="508.5" r="23.5" class="cls-1"/>
+    <ellipse cx="155.5" cy="447.5" rx="80.5" ry="38.5" class="cls-1"/>
+    <circle cx="234.5" cy="394.5" r="37.5" class="cls-1"/>
+    <path d="M176.947,270.975 C206.321,244.488 248.740,240.266 271.693,261.544 C294.646,282.822 289.441,321.544 260.067,348.030 C230.694,374.517 188.274,378.739 165.321,357.461 C142.368,336.183 147.573,297.462 176.947,270.975 Z" class="cls-2"/>
+    <path d="M182.573,104.133 C203.563,107.533 214.277,149.182 206.504,197.157 C198.732,245.133 175.416,281.268 154.427,277.867 C133.437,274.467 122.723,232.818 130.496,184.843 C138.268,136.867 161.584,100.732 182.573,104.133 Z" class="cls-2"/>
+    <ellipse cx="271" cy="122" rx="47" ry="46" class="cls-1"/>
+  </g>
+</svg>
