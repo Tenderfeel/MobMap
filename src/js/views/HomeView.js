@@ -1,6 +1,6 @@
 (function() {
 
-  var AreaListView = require('../views/AreaListView');
+  var AreaView = require('../views/AreaView');
 
   module.exports = Backbone.View.extend({
     el: "#home",
@@ -19,11 +19,7 @@
       this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
 
-      this.AreaListView = new AreaListView({
-        el:this.$arealist,
-        collection: this.areaCollection,
-        mobCollection: this.mobCollection
-      });
+      this.areaViews = [];
 
       this.$navBtns = this.$el.find('.btn-nav');
       this.$navBtns.addClass('ui-disabled');
@@ -49,8 +45,23 @@
       });
     },
 
+    /**
+    * Render
+    */
     render: function render() {
-      this.AreaListView.render();
+      var self = this;
+      if ( !this.areaViews.length ) {
+        this.areaCollection.each(function(dat) {
+          var view = new AreaView({
+              model: dat,
+              mobCollection: self.mobCollection,
+              selectedOnly: false
+           });
+            self.areaViews.push(view);
+            self.$arealist.append(view.render().el);
+        }, this);
+      }
+      return this;
     },
 
     /*
@@ -62,6 +73,13 @@
       this.$resetBtn.toggleClass('ui-disabled', !total);
 
       this.$navBtns.toggleClass('ui-disabled', !total);
+    },
+
+    remove: function remove() {
+      delete this.areaViews;
+      delete this.areaCollection;
+      delete this.mobCollection;
+      delete this.$arealist;
     }
   });
 

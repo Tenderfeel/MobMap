@@ -1,6 +1,6 @@
 (function() {
 
-  var AreaListView = require('../views/AreaListView');
+  var AreaView = require('../views/AreaView');
 
   /**
    * DefaultView
@@ -19,13 +19,7 @@
       this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
 
-      this.AreaListView = new AreaListView({
-        el:this.$arealist,
-        collection: this.areaCollection,
-        mobCollection: this.mobCollection,
-        selectedOnly: true
-      });
-
+      this.areaViews = [];
     },
 
     handleNav: function handleNav(e) {
@@ -37,12 +31,24 @@
     },
 
     render: function render() {
-      this.AreaListView.render();
+      var self = this;
+      if ( !this.areaViews.length ) {
+        this.areaCollection.each(function(dat) {
+          var view = new AreaView({
+              model: dat,
+              mobCollection: self.mobCollection,
+              selectedOnly: true
+           });
+            self.areaViews.push(view);
+            self.$arealist.append(view.render().el);
+        }, this);
+      }
+      return this;
     },
 
     remove: function remove() {
       this.AreaListView.remove();
-      delete this.AreaListView;
+      delete this.areaViews;
       delete this.areaCollection;
       delete this.mobCollection;
       delete this.$arealist;
