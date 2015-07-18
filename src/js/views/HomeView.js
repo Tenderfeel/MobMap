@@ -12,9 +12,8 @@
 
     initialize: function initialize(opt) {
       this.$arealist = this.$el.find('#home-arealist');
-      this.$consol = this.$el.find('#arealist-console');
-      this.$counter = this.$consol.find('.arealist-counter');
-      this.$resetBtn = this.$consol.find('.btn-reset');
+      this.$counter = this.$el.find('.arealist-counter');
+      this.$resetBtn = this.$el.find('.btn-reset');
 
       this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
@@ -73,13 +72,6 @@
       this.$resetBtn.toggleClass('ui-disabled', !total);
 
       this.$navBtns.toggleClass('ui-disabled', !total);
-    },
-
-    remove: function remove() {
-      delete this.areaViews;
-      delete this.areaCollection;
-      delete this.mobCollection;
-      delete this.$arealist;
     }
   });
 

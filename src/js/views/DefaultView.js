@@ -32,26 +32,39 @@
 
     render: function render() {
       var self = this;
-      if ( !this.areaViews.length ) {
-        this.areaCollection.each(function(dat) {
+
+      if ( this.areaViews.length ) {
+        return this;
+      }
+
+      this.areaCollection.each(function(dat) {
+
+        if ( self.mobCollection.selected.area[dat.get('id')] > 0) {
           var view = new AreaView({
               model: dat,
               mobCollection: self.mobCollection,
-              selectedOnly: true
+              selectedOnly: true,
+              attr: {
+                collapsed: false
+              }
            });
             self.areaViews.push(view);
             self.$arealist.append(view.render().el);
-        }, this);
-      }
+        }
+      }, this);
       return this;
     },
 
-    remove: function remove() {
-      this.AreaListView.remove();
-      delete this.areaViews;
-      delete this.areaCollection;
-      delete this.mobCollection;
-      delete this.$arealist;
+    reset: function reset() {
+
+      if ( this.areaViews.length ) {
+        _.each(this.areaViews, function(view) {
+          view.remove();
+        });
+      }
+
+      this.$arealist.empty();
+      this.areaViews = [];
     }
 
   });

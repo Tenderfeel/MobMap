@@ -23,8 +23,7 @@ Template:
     tagName: 'div',
     className: 'area',
     attr: {
-      'data-role': 'collapsible'
-      //,'data-collapsed': false
+      //'data-role': 'collapsible'
     },
     template: Handlebars.compile($("#area-template").html()),
 
@@ -34,6 +33,7 @@ Template:
       //選択されたモブだけ表示する
       this.selectedOnly = options.selectedOnly;
       this.mobCollection = options.mobCollection;
+      this.attr = _.extend(this.attr, options.attr || {});
 
     },
 
@@ -47,9 +47,13 @@ Template:
         return this;
       }
 
-      this.$el.attr(this.attr).html(html);
+      //this.$el.attr(this.attr).html(html);
+      this.$el.html(html).collapsible(this.attr);
 
       var $mobList = this.$el.find('.mobs');
+      $mobList.listview({
+        inset: false
+      });
 
       _.each(this.model.get('mobs'), function(mob) {
           var view,
@@ -76,7 +80,6 @@ Template:
     _getMobPosition: function _getMobPosition(posId) {
       return _.findWhere(this.model.get('pos'), {id: posId});
     }
-
 
   });
 

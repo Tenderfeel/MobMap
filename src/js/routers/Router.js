@@ -54,6 +54,8 @@ module.exports = Backbone.Router.extend({
   homePage: function homePage() {
     this.homeView.render();
     this.showHome = true;
+    this.defaultView.reset();
+    this.mapView.reset();
 
     $( ":mobile-pagecontainer" ).pagecontainer( "change",
        this.homeView.$el, {

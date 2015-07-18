@@ -59,10 +59,10 @@
 
     },
 
-    remove: function remove() {
-      delete this.areaCollection;
-      delete this.mobCollection;
-      delete this.$maplist;
+    reset: function reset() {
+      this.$el.find('.pos:visible').each(function(el) {
+        el.hide();
+      });
     }
 
   });

@@ -62,19 +62,17 @@
 <div id="home" data-role="page" data-title="MobMap" class="ui-page-theme-b">
   <div data-role="header" data-position="fixed">
     <h1>MobMap</h1>
+    <a href="#"
+           class="ui-btn ui-corner-all ui-mini ui-btn-icon-left ui-icon-refresh btn-reset ui-disabled ui-btn-left">Reset</a>
   </div>
 
   <div role="main" class="ui-content">
     <div id="home-arealist" class="arealist" data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li">
     </div>
 
-    <div class="ui-grid-b" id="arealist-console">
+    <div class="ui-grid-a" id="arealist-console">
       <div class="ui-block-a"><p class="ui-bar ui-bar-c ui-corner-all ui-mini arealist-counter">Selected: 0</p></div>
       <div class="ui-block-b"></div>
-      <div class="ui-block-c">
-        <a href="#"
-           class="ui-btn ui-corner-all ui-mini ui-btn-icon-left ui-icon-refresh btn-reset ui-disabled">Reset</a>
-      </div>
     </div>
   </div>
 
@@ -210,7 +208,6 @@
         <p>ドラヴァニア雲海</p>
         <div class="container">
           <img class="map-base" src="images/map/3.jpg" alt=""/>
-          <img class="map-text" src="images/map/3_text.png" alt=""/>
           <svg class="map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="582" height="582" viewBox="0 0 582 582">
           <g>
             <path id="map-3-1" d="M413.526,420.840 C449.961,435.917 474.525,455.463 468.390,464.497 C462.256,473.531 427.746,468.632 391.310,453.555 C354.875,438.478 330.311,418.932 336.446,409.899 C342.581,400.865 377.091,405.763 413.526,420.840 Z" class="pos"/>
@@ -237,6 +234,7 @@
             <circle id="map-3-22" cx="339.5" cy="112.5" r="43.5" class="pos"/>
           </g>
         </svg>
+          <img class="map-text" src="images/map/3_text.png" alt=""/>
         </div>
       </div>
 
@@ -244,7 +242,6 @@
         <p>アバラシア雲海</p>
         <div class="container">
           <img class="map-base" src="images/map/4.jpg" alt=""/>
-          <img class="map-text" src="images/map/4_text.png" alt=""/>
           <svg class="map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="582" height="582" viewBox="0 0 582 582">
           <g>
             <path id="map-4-1" d="M202.830,445.802 C231.999,434.598 260.650,440.154 266.823,458.212 C272.995,476.270 254.353,499.993 225.183,511.198 C196.014,522.402 167.363,516.846 161.190,498.788 C155.017,480.730 173.660,457.007 202.830,445.802 Z" class="pos"/>
@@ -274,7 +271,7 @@
             <circle id="map-4-25" cx="128.5" cy="331.5" r="22.5" class="pos"/>
           </g>
         </svg>
-
+          <img class="map-text" src="images/map/4_text.png" alt=""/>
         </div>
       </div>
     </div> <!--MapList-->
@@ -296,7 +293,7 @@
     {{name}}
     {{#if count}}<span class="ui-li-count">{{count}}</span>{{/if}}
   </h2>
-  <ul class="mobs" data-role="listview" data-inset="false"></ul>
+  <ul class="mobs"></ul>
 </script>
 
 <script type="text/x-handlebars-template" id="mob-template">
