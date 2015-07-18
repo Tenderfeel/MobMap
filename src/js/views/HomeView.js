@@ -7,11 +7,12 @@
 
     events: {
       'click .btn-nav': 'handleNav',
-      'click .btn-reset': 'handleReset'
+      'click .btn-reset': 'handleReset',
+      'click #btn-help': 'handleHelp'
     },
 
     initialize: function initialize(opt) {
-      this.$arealist = this.$el.find('#home-arealist');
+      this.$arealist = $('#home-arealist');
       this.$counter = this.$el.find('.arealist-counter');
       this.$resetBtn = this.$el.find('.btn-reset');
 
@@ -24,6 +25,10 @@
       this.$navBtns.addClass('ui-disabled');
 
       this.listenTo(this.mobCollection, 'change:selected', this.handleChangeTargetCount, this);
+    },
+
+    handleHelp: function handleHelp() {
+      $('#help-dialog').popup( "open" );
     },
 
     handleNav: function handleNav(e) {

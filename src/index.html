@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>MobMap</title>
+  <title>MobMap - Monster Map of Clan Hunt in Heavensward</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet prefetch' href='//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css'>
   <style type="text/css">
@@ -59,11 +59,12 @@
   </style>
 </head>
 <body class="ui-overlay-b">
-<div id="home" data-role="page" data-title="MobMap" class="ui-page-theme-b">
+<div id="home" data-role="page" data-title="MobMap - Monster Map of Clan Hunt in Heavensward" class="ui-page-theme-b">
   <div data-role="header" data-position="fixed">
     <h1>MobMap</h1>
     <a href="#"
            class="ui-btn ui-corner-all ui-mini ui-btn-icon-left ui-icon-refresh btn-reset ui-disabled ui-btn-left">Reset</a>
+    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-b ui-btn-inline ui-btn-right" id="btn-help">Help</a>
   </div>
 
   <div role="main" class="ui-content">
@@ -85,6 +86,31 @@
       </ul>
     </div>
   </div>
+
+
+<div data-role="popup" id="help-dialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+    <div data-role="header" data-theme="a">
+    <h1>Help</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <h3 class="ui-title">How to use</h3>
+      <ol>
+        <li>Get the Clan Hunt List (of today)!</li>
+        <li>Check the monsters of the target and select in the top page of this app.</li>
+        <li>When you have finished selecting a monster, then press the List or Map button</li>
+        <li>Display the selected monster together in each area. In this list you can also check the coordinates of each monster.</li>
+        <li>When you want to initialize, please press the home of reset button.</li>
+      </ol>
+
+       <h3>Copyright</h3>
+      <ul>
+        <li>
+          <p>I took advantage of this area distribution chart to the time of SVG data created.</p>
+          <a href="http://ff14mosuchan.blog.fc2.com/blog-entry-188.html">【蒼天のイシュガルド】モンスター分布地図</a></li>
+      </ul>
+      <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-b" data-rel="back">Close</a>
+    </div>
+</div>
 </div>
 
 <div id="default" data-role="page" data-title="List - MobMap" class="ui-page-theme-b">
@@ -287,6 +313,7 @@
     </div>
   </div>
 </div>
+
 
 <script type="text/x-handlebars-template" id="area-template">
   <h2 class="name">
