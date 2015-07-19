@@ -37,6 +37,8 @@
         return this;
       }
 
+      this.$el.css('visibility','visible');
+
       this.areaCollection.each(function(dat) {
 
         if ( self.mobCollection.selected.area[dat.get('id')] > 0) {

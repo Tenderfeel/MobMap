@@ -206,14 +206,14 @@ module.exports = {
   ],
 
   mob: [
-    {id: 1, lv: 50, name: 'アイストラップ', pos: [21], area: 1},
+    {id: 1, lv: 50, name: 'アイストラップ', pos: [21], area: 1},//上級x3
     {id: 2, lv: 50, name: 'アップランド・ミロドン', pos: [15], area: 1}, //上級 x3 リバーズミート 30,20
     {id: 3, lv: 50, name: 'ゴールドウィンド・バテラー', pos: [20], area: 1},
     {id: 4, lv: 50, name: 'シルバーウルフ', pos:[4, 17], area: 1},//初級x3
     {id: 5, lv: 50, name: 'スタインボック', pos:[1], area: 1, difficulty: 1},
     {id: 6, lv: 50, name: 'スラッシュゾブラン', pos: [29], area: 1},
     {id: 7, lv: 50, name: 'ディープアイ', pos:[2], area: 1},
-    {id: 8, lv: 50, name: 'フロストグレネード', pos: [20], area: 1},//上級x2
+    {id: 8, lv: 50, name: 'フロストグレネード', pos: [20], area: 1},//初級x2 上級x2
     {id: 9, lv: 50, name: 'ベルグスルス', pos:[3], area: 1}, // 初級 x2 リバーズミート 33,25
     {id: 10, lv: 51, name: 'アイスコマンダー', pos: [24], area: 1},
     {id: 11, lv: 51, name: 'アルケオーニス', pos:[26, 27], area: 1},//初級 x3 中級x3
@@ -240,7 +240,7 @@ module.exports = {
     {id: 30, lv: 52, name: 'グナース・ファイアドローン', pos: [12], area: 2},
     {id: 31, lv: 52, name: 'ドラゴンフライ・ウォッチャー',pos: [11], area: 2},
     {id: 32, lv: 52, name: 'ドラヴァニアン・エイビス', pos: [8], area: 2},
-    {id: 33, lv: 52, name: 'バンダースナッチ', pos: [3], area: 2},
+    {id: 33, lv: 52, name: 'バンダースナッチ', pos: [3], area: 2},//初級x3
     {id: 34, lv: 52, name: 'フェザーフリー', pos: [2], area: 2},//初級 x3
     {id: 35, lv: 52, name: 'ブラウンベアー', pos: [7], area: 2},
     {id: 36, lv: 52, name: 'メリアエ', pos: [8,9], area: 2},//初級x2 中級x2
@@ -255,9 +255,9 @@ module.exports = {
     {id: 45, lv: 53, name: 'シリクタ', pos: [19], area: 2},//中級x2 上級x2
     {id: 46, lv: 53, name: 'ティラノサウルス', pos: [19], area: 2},//初級x2
     {id: 47, lv: 53, name: 'ドラヴァニアン・ワイバーン', pos: [16], area: 2},
-    {id: 48, lv: 53, name: 'ビネガロン', pos: [19], area: 2}, //上級 x2
+    {id: 48, lv: 53, name: 'ビネガロン', pos: [19], area: 2}, //初級x2 上級 x2
     {id: 49, lv: 53, name: 'フォーランド・ヒッポセルフ', pos: [18], area: 2},//中級x3
-    {id: 50, lv: 53, name: 'ミアキス', pos: [17], area: 2},//初級x3
+    {id: 50, lv: 53, name: 'ミアキス', pos: [17], area: 2},//初級x3 上級x3
     {id: 51, lv: 57, name: 'ゴールデン・バンダースナッチ', pos: [4,6], area: 2},
     {id: 52, lv: 57, name: 'サンダードラゴン', pos: [5], area: 2},
     {id: 53, lv: 57, name: 'ドラゴンフライ・トレーサー', pos: [5], area: 2},
@@ -265,11 +265,11 @@ module.exports = {
 
     //ドラヴァニア雲海
     {id: 55, lv: 54, name: 'アルケオダイノス', pos: [5], area: 3},
-    {id: 56, lv: 54, name: 'アンフィプテレ', pos: [12], area: 3},
+    {id: 56, lv: 54, name: 'アンフィプテレ', pos: [12], area: 3},//中級x2
     {id: 57, lv: 54, name: 'ウアジェット', pos: [8], area: 3}, //上級 x2 中級x2
     {id: 58, lv: 54, name: 'サンクチンニ', pos: [1,2], area: 3},//上級x3
     {id: 59, lv: 54, name: 'トゥリヘンド', pos: [7], area: 3},//上級x2
-    {id: 60, lv: 54, name: 'モスドラゴン', pos: [9], area: 3},//中級x2
+    {id: 60, lv: 54, name: 'モスドラゴン', pos: [9], area: 3},//中級x2 上級x2
     {id: 61, lv: 54, name: 'レッサードラゴン', pos: [11], area: 3}, //中級 x2
     {id: 62, lv: 54, name: 'ロプケン', pos: [4], area: 3},
     {id: 63, lv: 55, name: 'ヴィーヴル', pos: [15], area: 3},//中級x2
@@ -297,7 +297,7 @@ module.exports = {
     {id: 83, lv: 51, name: 'ナツライ・グンド', pos: [6], area: 4},//初級x1
     {id: 84, lv: 51, name: 'ランライ・グンド', pos: [6], area: 4}, //初級 x1
     {id: 85, lv: 56, name: 'ウィセント', pos: [9], area: 4}, //中級 x2
-    {id: 86, lv: 56, name: 'ダルメル', pos: [8], area: 4},
+    {id: 86, lv: 56, name: 'ダルメル', pos: [8], area: 4},//中級x3
     {id: 87, lv: 56, name: 'ワイリー・パイッサ', pos: [9], area: 4},
     {id: 88, lv: 57, name: 'アバラシア・カイト', pos: [11], area: 4},
     {id: 89, lv: 57, name: 'ウィンドウ・ワモーラ', pos: [12], area: 4},
@@ -367,7 +367,7 @@ module.exports = {
     {id: 149,lv: 59,name: "メラシディアン・ファラク",pos: [28],area: 6},
     {id: 150,lv: 59,name: "メラシディアン・プロビニャク",pos: [30],area: 6},
     {id: 151,lv: 59,name: "ラミア・サイブリッド",pos: [6],area: 6},
-    {id: 152,lv: 59,name: "ラミア・テリトーク",pos: [6],area: 6},
+    {id: 152,lv: 59,name: "ラミア・テリトーク",pos: [6],area: 6},//上級x1
     {id: 153,lv: 59,name: "レッサーハイドラ",pos: [35],area: 6},
     {id: 154,lv: 59,name: "レプトイド",pos: [9,14],area: 6},
     {id: 155,lv: 59,name: "ルークスナッパー",pos: [1],area: 6},

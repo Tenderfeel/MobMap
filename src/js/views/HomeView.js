@@ -59,6 +59,9 @@
     */
     render: function render() {
       var self = this;
+
+      this.$el.css('visibility','visible');
+
       if ( !this.areaViews.length ) {
         this.areaCollection.each(function(dat) {
           var view = new AreaView({

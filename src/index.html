@@ -88,9 +88,32 @@
       margin: 5px 0;
     }
 
+    #home, #default, #map {
+      visibility: hidden;
+    }
+
+    .loading {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: #666;
+      display: -webkit-box;
+      -webkit-box-align: center;
+    }
+
+    .loading > p {
+      width: 100%;
+      text-align: center;
+      color: #666;
+    }
+
   </style>
 </head>
-<body class="ui-overlay-b" style="display: none">
+<body>
+<div id="root" class="ui-overlay-b">
+<div class="loading"><p>Loading...</p></div>
 <div id="home" data-role="page" data-title="MobMap - Monster Map of Clan Hunt in Heavensward" class="ui-page-theme-b">
 <div data-role="header" data-position="fixed">
   <h1>MobMap</h1>
@@ -147,6 +170,8 @@
       <h3>Contact</h3>
 
       <p>Inquiries and requests are please to <a href="https://github.com/Tenderfeel/MobMap/issues" target="_blank">here</a>.</p>
+
+      <p>Or please send a message to <a href="http://twitter.com/Tenderfeel" target="_blank">Twitter</a>.</p>
     </div>
 
     <div class="ui-body ui-body-b ui-corner-all">
@@ -524,7 +549,7 @@
   </div>
 </div>
 </div>
-
+</div>
 
 <script type="text/x-handlebars-template" id="area-template">
   <h2 class="name">

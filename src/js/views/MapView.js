@@ -129,6 +129,8 @@
     render: function render() {
       var self = this;
 
+      this.$el.css('visibility','visible');
+
       this.areaCollection.each(function(areaModel) {
         var $map = $('#map-' + areaModel.get('id')),
             areaId = areaModel.get('id'),

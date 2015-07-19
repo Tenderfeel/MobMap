@@ -57,8 +57,6 @@ module.exports = Backbone.Router.extend({
     this.defaultView.reset();
     this.mapView.reset();
 
-    $(document.body).show();
-
     $( ":mobile-pagecontainer" ).pagecontainer( "change",
        this.homeView.$el, {
        reverse: true, changeHash: false} );

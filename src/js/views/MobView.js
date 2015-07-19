@@ -42,6 +42,10 @@
               'data-id': this.model.get('id')
             }).html(html);
 
+      if ( this.mode === 'kill') {
+        this.handleKilled();
+      }
+
       return this;
     },
 
