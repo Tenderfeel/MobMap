@@ -14,7 +14,8 @@
     el: "#map",
 
     events: {
-      'click .btn-nav': 'handleNav'
+      'click .btn-nav': 'handleNav',
+      'click .btn-map-close': 'handleMapClose'
     },
 
     initialize: function initialize(opt) {
@@ -29,6 +30,20 @@
 
       window.router.navigate(href, {trigger: true});
 
+    },
+
+    handleMapClose: function handleMapClose(e) {
+      var $btn = $(e.target),
+          id = $btn.attr('data-id');
+      $('#' + id + '>.container').slideToggle(300, function(e){
+          $btn.removeClass('ui-icon-minus ui-icon-plus');
+          if( $(this).is(':visible') ) {
+            $btn.addClass('ui-icon-minus');
+          } else {
+            $btn.addClass('ui-icon-plus');
+          }
+
+      });
     },
 
     render: function render() {

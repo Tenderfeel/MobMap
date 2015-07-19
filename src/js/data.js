@@ -222,7 +222,7 @@ module.exports = {
     {id: 14, lv: 51, name: 'ポーラーベアー', pos:[14], area: 1},//初級 x3
     {id: 15, lv: 51, name: 'ルーム', pos:[7, 12, 24], area: 1},
     {id: 16, lv: 51, name: 'ローン・イエティ', pos:[7, 10], area: 1},//中級 x2 初級x2 上級x2
-    {id: 17, lv: 56, name: 'アイスコマンダー', pos:[25], area: 1},
+    {id: 17, lv: 56, name: 'アイスコマンダー', pos:[25], area: 1},//中級x2
     {id: 18, lv: 56, name: 'アイスゾブラン', pos: [8, 11], area: 1},
     {id: 19, lv: 56, name: 'インランド・トゥルスス', pos: [19], area: 1},
     {id: 20, lv: 56, name: 'ウィンドスルス', pos: [25], area: 1},
@@ -243,7 +243,7 @@ module.exports = {
     {id: 33, lv: 52, name: 'バンダースナッチ', pos: [3], area: 2},
     {id: 34, lv: 52, name: 'フェザーフリー', pos: [2], area: 2},//初級 x3
     {id: 35, lv: 52, name: 'ブラウンベアー', pos: [7], area: 2},
-    {id: 36, lv: 52, name: 'メリアエ', pos: [8,9], area: 2},//初級x2
+    {id: 36, lv: 52, name: 'メリアエ', pos: [8,9], area: 2},//初級x2 中級x2
     {id: 37, lv: 52, name: 'リバー・ニンキナンカ', pos: [13], area: 2}, //初級 x2
     {id: 38, lv: 52, name: 'リバー・ナンカ', pos: [13], area: 2},
     {id: 39, lv: 52, name: 'ロフタン', pos: [10], area: 2},//中級 x3
@@ -252,7 +252,7 @@ module.exports = {
     {id: 42, lv: 53, name: 'グナース・フォリジャー', pos: [12], area: 2},
     {id: 43, lv: 53, name: 'グナース・ヘイルドローン', pos: [12], area: 2},
     {id: 44, lv: 53, name: 'グナース・アイアンドローン', pos: [12], area: 2},
-    {id: 45, lv: 53, name: 'シリクタ', pos: [19], area: 2},//中級x2
+    {id: 45, lv: 53, name: 'シリクタ', pos: [19], area: 2},//中級x2 上級x2
     {id: 46, lv: 53, name: 'ティラノサウルス', pos: [19], area: 2},//初級x2
     {id: 47, lv: 53, name: 'ドラヴァニアン・ワイバーン', pos: [16], area: 2},
     {id: 48, lv: 53, name: 'ビネガロン', pos: [19], area: 2}, //上級 x2
@@ -268,8 +268,8 @@ module.exports = {
     {id: 56, lv: 54, name: 'アンフィプテレ', pos: [12], area: 3},
     {id: 57, lv: 54, name: 'ウアジェット', pos: [8], area: 3}, //上級 x2 中級x2
     {id: 58, lv: 54, name: 'サンクチンニ', pos: [1,2], area: 3},//上級x3
-    {id: 59, lv: 54, name: 'トゥリヘンド', pos: [7], area: 3},
-    {id: 60, lv: 54, name: 'モスドラゴン', pos: [9], area: 3},
+    {id: 59, lv: 54, name: 'トゥリヘンド', pos: [7], area: 3},//上級x2
+    {id: 60, lv: 54, name: 'モスドラゴン', pos: [9], area: 3},//中級x2
     {id: 61, lv: 54, name: 'レッサードラゴン', pos: [11], area: 3}, //中級 x2
     {id: 62, lv: 54, name: 'ロプケン', pos: [4], area: 3},
     {id: 63, lv: 55, name: 'ヴィーヴル', pos: [15], area: 3},//中級x2
@@ -292,7 +292,7 @@ module.exports = {
     {id: 78, lv: 50, name: 'クラウドウォーム', pos: [3], area: 4}, ///初級 x1　中級x1
     {id: 79, lv: 50, name: 'コノドント', pos: [3], area: 4},//初級x1
     {id: 80, lv: 50, name: 'パイッサ', pos: [4], area: 4},
-    {id: 81, lv: 51, name: 'ウグライ・グンド', pos: [6], area: 4},
+    {id: 81, lv: 51, name: 'ウグライ・グンド', pos: [6], area: 4},//中級x1
     {id: 82, lv: 51, name: 'サヌワ', pos: [6], area: 4},//初級x1
     {id: 83, lv: 51, name: 'ナツライ・グンド', pos: [6], area: 4},//初級x1
     {id: 84, lv: 51, name: 'ランライ・グンド', pos: [6], area: 4}, //初級 x1
@@ -341,7 +341,7 @@ module.exports = {
     {id: 125, lv: 58, name: 'ラーテル', pos: [4], area: 5},
     {id: 126, lv: 58, name: 'ワイルドビースト', pos: [2], area: 5},
     {id: 127, lv: 58, name: 'III号ゴブリガードE型', pos: [5], area: 5},
-    {id: 128, lv: 59, name: 'オーケアニス', pos: [13], area: 5},
+    {id: 128, lv: 59, name: 'オーケアニス', pos: [13], area: 5},//上級x2
     {id: 129, lv: 59, name: 'オプケン', pos: [16], area: 5},//上級x3
     {id: 130, lv: 59, name: 'コカトリス', pos: [18], area: 5},
     {id: 131, lv: 59, name: 'ピフェリケラス', pos: [19], area: 5},
