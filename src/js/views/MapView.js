@@ -21,8 +21,6 @@
       this.areaCollection = opt.areaCollection || {};
       this.mobCollection = opt.mobCollection || {};
 
-      this.$maplist = this.$el.find('#maplist');
-
     },
 
     handleNav: function handleNav(e) {
@@ -38,23 +36,28 @@
 
       this.areaCollection.each(function(areaModel) {
         var $map = $('#map-' + areaModel.get('id')),
-            $mobList = $map.find('.moblist'),
             areaId = areaModel.get('id'),
             selectedPos = [];
 
-        _.each(areaModel.get('mobs'), function(mob) {
-          var mobModel = self.mobCollection.get(mob);
+        if ( !self.mobCollection.selected.area[areaId] ){
+          $map.hide();
+        } else {
+          $map.show();
 
-          _.each(mobModel.get('pos'), function(pos) {
-            if ( mobModel.get('selected') || _.indexOf(selectedPos, pos) !== -1) {
-               $('#map-' + areaId + '-' + pos).show();
-               selectedPos.push(pos);
-            } else {
-               $('#map-' + areaId + '-' + pos).hide();
-            }
-                  //$mobList.append('<li>Lv.' + mobModel.get('lv') + ' ' + mobModel.get('name') + '</li>')
+          _.each(areaModel.get('mobs'), function(mob) {
+            var mobModel = self.mobCollection.get(mob);
+
+            _.each(mobModel.get('pos'), function(pos) {
+              if ( mobModel.get('selected') || _.indexOf(selectedPos, pos) !== -1) {
+                 $('#map-' + areaId + '-' + pos).show();
+                 selectedPos.push(pos);
+              } else {
+                 $('#map-' + areaId + '-' + pos).hide();
+              }
+            });
           });
-        });
+        }
+
       });
 
     },
