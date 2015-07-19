@@ -6,7 +6,8 @@
       area: 1,
       lv: 1,
       pos: [],
-      selected: false
+      selected: false,
+      killed: false
     }
   });
 

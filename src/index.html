@@ -16,6 +16,9 @@
       height: 100%;
       margin: 10px auto;
       max-width: 582px;
+      z-index: 0;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .container {
@@ -45,6 +48,16 @@
       height: auto;
     }
 
+    .map-base {
+      z-index: 0;
+    }
+    .map-text {
+      z-index: 1;
+    }
+    .map-svg {
+      z-index: 2;
+    }
+
     .btn-map-close {
       position: absolute;
       top: 0;
@@ -56,6 +69,15 @@
       fill: red;
       opacity: 0.5;
       display: none;
+    }
+
+    .pos.killed {
+      fill: #999;
+    }
+
+    .mob-killed {
+      text-decoration: line-through !important;
+      color: #666 !important;
     }
 
     path {
@@ -513,7 +535,12 @@
 </script>
 
 <script type="text/x-handlebars-template" id="mob-template">
-  <a class="ui-btn"><p class="name">Lv.{{lv}}　{{name}}</p></a>
+  <a class="ui-btn">
+    <p class="name">Lv.{{lv}}　{{name}}</p>
+    {{#if position }}
+      <p class="ui-li-aside">{{position.name}}({{position.x}},{{position.y}})</p>
+    {{/if}}
+  </a>
 </script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>

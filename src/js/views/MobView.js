@@ -20,38 +20,69 @@
 
     initialize: function initialize(opt) {
 
-      //this.model = opt.model;
-      this.activeClass = opt.activeClass || false;
+      this.mode = opt.mode || null;
       this.posData = opt.posData;
 
-      this.model.on('change', this.handleChange, this);
+      if ( this.mode === 'check' ) {
+        this.listenTo(this.model, 'change:selected', this.handleSelected, this);
+      }
+
+      if ( this.mode === 'kill' ) {
+        this.listenTo(this.model, 'change:killed', this.handleKilled, this);
+      }
     },
 
     render: function render() {
-      var html = this.template(this.model.toJSON());
+      var data = this.model.toJSON();
+      //マップ座標データをテンプレートに渡す
+      data.position = this.posData;
+      var html = this.template(data);
+
       this.$el.attr({
               'data-id': this.model.get('id')
             }).html(html);
 
-      if ( this.posData ) {
-        this.$el.append('<p class="ui-li-aside">' + this.posData.name
-            + ' (' + this.posData.x + ',' + this.posData.y + ')</p>');
-      }
       return this;
     },
 
-    handleChange: function handleChange() {
-      if ( this.activeClass ) {
-        this.$el.find('.ui-btn')
-              .toggleClass('ui-btn-active', this.model.get('selected'));
-      }
+    /**
+     * Handling change:selected event of MobModel
+     */
+    handleSelected: function handleSelected() {
+      this.$el.find('.ui-btn')
+              .toggleClass('ui-btn-active ui-icon-check ui-btn-icon-left ui-nodisc-icon', this.model.get('selected'));
+    },
+
+    /**
+     * Handling change:killed event of MobModel
+     */
+    handleKilled: function handleKilled() {
+      this.$el.find('.ui-btn')
+              .toggleClass('mob-killed', this.model.get('killed'));
     },
 
     /*
       Handling Click Event
+
+      表示モード(this.mode)によってmodelの操作を変える。
+      check : 選択する
+      kill : selectedなモブを倒す
     */
     handleClick: function handleClick() {
-      this.model.set('selected', !this.model.get('selected'));
+
+      switch ( this.mode ) {
+        case 'check':
+          this.model.set('selected', !this.model.get('selected'));
+          break;
+
+        case 'kill':
+          this.model.set('killed', !this.model.get('killed'));
+          break;
+
+        default:
+          break;
+      }
+
     }
   });
 

@@ -42,7 +42,7 @@
         if ( self.mobCollection.selected.area[dat.get('id')] > 0) {
           var view = new AreaView({
               model: dat,
-              mobCollection: self.mobCollection,
+              collection: self.mobCollection,
               selectedOnly: true,
               attr: {
                 collapsed: false
@@ -59,6 +59,7 @@
 
       if ( this.areaViews.length ) {
         _.each(this.areaViews, function(view) {
+          view.reset();
           view.remove();
         });
       }

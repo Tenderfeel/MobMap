@@ -58,7 +58,7 @@
         this.areaCollection.each(function(dat) {
           var view = new AreaView({
               model: dat,
-              mobCollection: self.mobCollection,
+              collection: self.mobCollection,
               selectedOnly: false
            });
             self.areaViews.push(view);

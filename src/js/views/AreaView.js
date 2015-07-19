@@ -32,7 +32,6 @@ Template:
       this.mobViews = [];
       //選択されたモブだけ表示する
       this.selectedOnly = options.selectedOnly;
-      this.mobCollection = options.mobCollection;
       this.attr = _.extend(this.attr, options.attr || {});
 
     },
@@ -42,8 +41,11 @@ Template:
           data = this.model.toJSON(),
           html = this.template(data);
 
+      /**
+       * 選択されたモブのみ表示の場合に、1体も選択されていなければスキップ
+       */
       if( this.selectedOnly
-          && !this.mobCollection.selected.area[this.model.get('id')] ) {
+          && !this.collection.selected.area[this.model.get('id')] ) {
         return this;
       }
 
@@ -55,20 +57,33 @@ Template:
         inset: false
       });
 
+      /**
+       * Create of Mob List
+       */
       _.each(this.model.get('mobs'), function(mob) {
           var view,
-              model = this.mobCollection.get(mob),
+              model = this.collection.get(mob),
               posData = this._getMobPosition(_.first(model.get('pos')));
 
 
         //選択されたモブのみ表示 or 全表示の場合
-        if (this.selectedOnly
-            && model.get('selected') || !self.selectedOnly) {
+        if (this.selectedOnly && model.get('selected')
+            || !self.selectedOnly) {
+
           view = new MobView({
             model:model,
+            /**
+             * 選択されたモブのみ表示する場合、座標データを渡す
+             */
             posData: (self.selectedOnly? posData : null),
-            activeClass: (self.selectedOnly? false : true)
+            /**
+             * MobViewのモード切り替え
+             * 選択されたモブのみ表示→kill
+             * 全表示→check
+             */
+            mode: (self.selectedOnly? 'kill' : 'check')
           });
+
           $mobList.append(view.render().$el);
           this.mobViews.push(view);
         }
@@ -79,6 +94,13 @@ Template:
 
     _getMobPosition: function _getMobPosition(posId) {
       return _.findWhere(this.model.get('pos'), {id: posId});
+    },
+
+    reset: function reset () {
+      _.each(this.mobViews, function(view) {
+        view.remove();
+      });
+      this.movViews = [];
     }
 
   });

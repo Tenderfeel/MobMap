@@ -33,7 +33,7 @@
         this.selected.total--;
         this.selected.area[model.get('area')]--;
       }
-      console.log(this.selected.total, this.selected.area);
+      //console.log(this.selected.total, this.selected.area);
     }
   });
 
