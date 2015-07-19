@@ -47,6 +47,11 @@
       this.mobCollection.each(function(model) {
         model.set('selected', false);
       });
+
+      _.each(this.areaViews, function(view) {
+        view.collapse();
+      });
+
     },
 
     /**

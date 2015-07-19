@@ -36,6 +36,10 @@ Template:
 
     },
 
+    collapse: function() {
+      this.$el.collapsible('collapse');
+    },
+
     render: function() {
       var self = this,
           data = this.model.toJSON(),
