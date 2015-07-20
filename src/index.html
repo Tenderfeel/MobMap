@@ -109,6 +109,14 @@
       color: #666;
     }
 
+    @media all and (max-width: 36em){
+      .ui-listview .ui-li-aside {
+        position:relative;
+        top: auto;
+        right: auto;
+        font-size: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -221,7 +229,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
 </div>
 
 <div role="main" class="ui-content">
-<div class="maplist">
+<div id="maplist">
 <div class="map" id="map-1">
   <p class="ui-bar ui-bar-b ui-corner-all">
     クルザス西部高地
