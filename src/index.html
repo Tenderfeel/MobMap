@@ -119,6 +119,10 @@
         font-size: 10px;
       }
     }
+
+    #eorzeadb_tooltip {
+      z-index: 10000;
+    }
   </style>
 </head>
 <body>
@@ -572,12 +576,17 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
 </script>
 
 <script type="text/x-handlebars-template" id="mob-template">
-  <a class="ui-btn">
+  <a href="#" class="btn-data">
     <p class="name">Lv.{{lv}}　{{name}}</p>
     {{#if position }}
       <p class="ui-li-aside">{{position.name}}({{position.x}},{{position.y}})</p>
     {{/if}}
   </a>
+  {{#if db}}
+    <a href="http://jp.finalfantasyxiv.com/lodestone/playguide/db/npc/enemy/{{db}}/"
+     class="eorzeadb_link" target="_blank"></a>
+  {{/if}}
+
 </script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -597,5 +606,6 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.14/backbone.localStorage-min.js"></script>
+<script src="//img.finalfantasyxiv.com/lds/pc/global/js/eorzeadb/loader.js?v1"></script>
 <script src="js/main.js"></script>
 </html>

@@ -15,7 +15,7 @@
     className:'mob',
     template: Handlebars.compile($("#mob-template").html()),
     events: {
-       'click': 'handleClick'
+       'click .btn-data': 'handleClick'
      },
 
     initialize: function initialize(opt) {
@@ -53,7 +53,7 @@
      * Handling change:selected event of MobModel
      */
     handleSelected: function handleSelected() {
-      this.$el.find('.ui-btn')
+      this.$el.find('.btn-data')
               .toggleClass('ui-btn-active ui-icon-check ui-btn-icon-left ui-nodisc-icon', this.model.get('selected'));
     },
 
@@ -72,7 +72,8 @@
       check : 選択する
       kill : selectedなモブを倒す
     */
-    handleClick: function handleClick() {
+    handleClick: function handleClick(e) {
+      e.preventDefault();
 
       switch ( this.mode ) {
         case 'check':

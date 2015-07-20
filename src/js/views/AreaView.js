@@ -57,18 +57,26 @@ Template:
       this.$el.html(html).collapsible(this.attr);
 
       var $mobList = this.$el.find('.mobs');
+
+      this._createMobList($mobList);
+
       $mobList.listview({
-        inset: false
+        inset: false,
+        icon: false,
+        splitIcon: "action"
       });
 
+      return this;
+    },
+
+    _createMobList: function _createMobList($mobList) {
       /**
        * Create of Mob List
        */
       _.each(this.model.get('mobs'), function(mob) {
-          var view,
-              model = this.collection.get(mob),
-              posData = this._getMobPosition(_.first(model.get('pos')));
-
+        var view,
+            model = this.collection.get(mob),
+            posData = this._getMobPosition(_.first(model.get('pos')));
 
         //選択されたモブのみ表示 or 全表示の場合
         if (this.selectedOnly && model.get('selected')
@@ -93,6 +101,7 @@ Template:
         }
 
       }, this);
+
       return this;
     },
 
