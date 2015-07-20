@@ -368,7 +368,7 @@ module.exports = {
     {id: 150,lv: 59,name: "メラシディアン・プロビニャク",pos: [30],area: 6},
     {id: 151,lv: 59,name: "ラミア・サイブリッド",pos: [6],area: 6},
     {id: 152,lv: 59,name: "ラミア・テリトーク",pos: [6],area: 6},//上級x1
-    {id: 153,lv: 59,name: "レッサーハイドラ",pos: [35],area: 6},
+    {id: 153,lv: 59,name: "レッサーハイドラ",pos: [33],area: 6},//上級x2
     {id: 154,lv: 59,name: "レプトイド",pos: [9,14],area: 6},
     {id: 155,lv: 59,name: "ルークスナッパー",pos: [1],area: 6},
     {id: 156,lv: 59,name: "VIレギオン・ビット",pos: [15],area: 6},
