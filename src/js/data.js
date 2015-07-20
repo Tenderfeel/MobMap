@@ -336,7 +336,7 @@ module.exports = {
     {id: 120, lv: 59, name: 'サンリーチ', pos: [13], area: 5}, //上級 x2
     {id: 121, lv: 58, name: 'ダムゼルフライ', pos: [7], area: 5},
     {id: 122, lv: 58, name: 'タランチュラホーク', pos: [6], area: 5},
-    {id: 123, lv: 58, name: 'ナルブルーイ', pos: [1], area: 5},
+    {id: 123, lv: 58, name: 'ナルブルーイ', pos: [1], area: 5},//上級x3
     {id: 124, lv: 58, name: 'モルボルグレート', pos: [10], area: 5},
     {id: 125, lv: 58, name: 'ラーテル', pos: [4], area: 5},
     {id: 126, lv: 58, name: 'ワイルドビースト', pos: [2], area: 5},
