@@ -7,6 +7,14 @@ http://tenderfeel.github.io/MobMap/
 
 # For developers
 
+## Library
+
+* jQuery
+* jQueryMobile
+* Underscore
+* Backbone
+* Handlebars
+
 ## Need Modules
 * node.js
 * npm
@@ -37,4 +45,4 @@ It makes the dist directory to gh-pages branch.
 
 ```
 git push origin `git subtree split --prefix dist master`:gh-pages --force
-``
+```
