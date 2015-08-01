@@ -44,14 +44,22 @@
      * リセットボタンが押された
      */
     handleReset: function handleReset() {
+
       this.mobCollection.each(function(model) {
         model.set('selected', false);
       });
 
+      //initialized areaview
       _.each(this.areaViews, function(view) {
         view.collapse();
       });
 
+      //initialized map
+      for (var i = 1; i < 7; i++) {
+        $('#map-' + i + '>.container').slideDown(0);
+        $('#map-' + i + ' .btn-map-close').removeClass('ui-icon-plus ui-icon-minus')
+                                          .addClass('ui-icon-minus');
+      }
     },
 
     /**
