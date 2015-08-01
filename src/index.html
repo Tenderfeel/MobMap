@@ -42,7 +42,9 @@
     }
 
     .map-text,
-    .map-svg {
+    .map-svg,
+    .map-mobname{
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
@@ -54,10 +56,13 @@
       z-index: 0;
     }
     .map-text {
-      z-index: 1;
+      z-index: 0;
     }
     .map-svg {
-      z-index: 2;
+      z-index: 1;
+    }
+    .map-mobname {
+      z-index: 0;
     }
 
     .btn-map-close {
@@ -67,14 +72,31 @@
       margin: 0;
     }
 
+    .map-mobname > .names {
+      position: absolute;
+      display: flex;
+      flex-flow: column wrap;
+      align-self: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-mobname p {
+      margin: 0;
+      color: #000;
+      font-size: 10px;
+      text-shadow: none;
+      font-weight: bold;
+    }
+
     .pos {
       fill: red;
-      opacity: 0.5;
+      opacity: 0.4;
       display: none;
     }
 
     .pos.killed {
-      fill: #999;
+      fill: #666;
     }
 
     .mob-killed {
@@ -228,6 +250,8 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
 
 <div data-role="header" data-position="fixed">
   <h1>Target Map</h1>
+    <a href="#"
+     class="ui-btn ui-corner-all ui-mini ui-btn-icon-left ui-icon-location btn-toggle-location ui-btn-right">Location</a>
 </div>
 
 <div role="main" class="ui-content">
@@ -288,6 +312,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
       </g>
     </svg>
     <img class="map-text" src="images/map/1_text.png" alt=""/>
+    <div class="map-mobname"></div>
   </div>
 </div>
 
@@ -330,6 +355,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
       </g>
     </svg>
     <img src="images/map/2_text.png" alt="" class="map-text">
+    <div class="map-mobname"></div>
   </div>
 </div>
 
@@ -378,6 +404,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
       </g>
     </svg>
     <img class="map-text" src="images/map/3_text.png" alt=""/>
+    <div class="map-mobname"></div>
   </div>
 </div>
 
@@ -427,6 +454,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
       </g>
     </svg>
     <img class="map-text" src="images/map/4_text.png" alt=""/>
+    <div class="map-mobname"></div>
   </div>
 </div>
 
@@ -474,6 +502,7 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
       </g>
     </svg>
     <img class="map-text" src="images/map/5_text.png" alt=""/>
+    <div class="map-mobname"></div>
   </div>
 </div>
 
@@ -543,8 +572,8 @@ Available in a PC , Tablet , Smartphone, where the webkit browser is running.</p
         <ellipse id="map-6-38" cx="289" cy="292" rx="99" ry="43" class="pos"/>
       </g>
     </svg>
-
     <img class="map-text" src="images/map/6_text.png" alt=""/>
+    <div class="map-mobname"></div>
   </div>
 </div>
 </div>

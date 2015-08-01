@@ -16,7 +16,8 @@
     events: {
       'click .btn-nav': 'handleNav',
       'click .btn-map-close': 'handleMapClose',
-      'click .pos': 'handleClickSVG'
+      'click .pos': 'handleClickSVG',
+      'click .btn-toggle-location': 'handleClickLocation'
     },
 
     initialize: function initialize(opt) {
@@ -40,6 +41,7 @@
 
     /**
      * Handling click event of map close button
+     * マップを表示・非表示する
      * @param e
      */
     handleMapClose: function handleMapClose(e) {
@@ -53,6 +55,18 @@
             $btn.addClass('ui-icon-plus');
           }
 
+      });
+    },
+
+    /**
+     * Handling click event of location button
+     * マップのロケーションテキストを表示・非表示する
+     * @param e
+     */
+    handleClickLocation: function handleClickLocation(e) {
+      e.preventDefault();
+      $('.map-text').each(function() {
+        $(this).toggle();
       });
     },
 
@@ -109,6 +123,11 @@
 
     },
 
+    /**
+     * Handling click event of SVG Elements
+     * SVGにクラスを追加し、モブのkilledをセットする
+     * @param e
+     */
     handleClickSVG: function handleClickSVG(e) {
       var id = e.target.id.split('-'),
           areaId = Number(id[1]),
@@ -131,26 +150,69 @@
 
       this.$el.css('visibility','visible');
 
+
       this.areaCollection.each(function(areaModel) {
         var $map = $('#map-' + areaModel.get('id')),
             areaId = areaModel.get('id'),
             selectedPos = [];
 
+        $map.find('.map-mobname').empty();
+
+        //モブが選択されてないエリア
         if ( !self.mobCollection.selected.area[areaId] ){
           $map.hide();
+
         } else {
           $map.show();
 
+          //Areaに登録されたmobIdの配列を処理
           _.each(areaModel.get('mobs'), function(mob) {
-            var mobModel = self.mobCollection.get(mob);
+            var mobModel = self.mobCollection.get(mob),//IDからMobModelを得る
+                posData = areaModel.get('pos');//posDataの配列を得る
 
+            //Mobに登録されたposIdの配列を処理（同エリア内に複数箇所生息する事がある）
             _.each(mobModel.get('pos'), function(pos) {
-              if ( mobModel.get('selected') || _.indexOf(selectedPos, pos) !== -1) {
-                 $('#map-' + areaId + '-' + pos).show();
-                 selectedPos.push(pos);
-              } else {
-                 $('#map-' + areaId + '-' + pos).hide();
+              var $pos = $('#map-' + areaId + '-' + pos);//SVG
+
+              if ( !mobModel.get('selected') ) {
+
+                if ( _.indexOf(selectedPos, pos) === -1 ) {
+                  $pos.hide();
+                }
+
+                return;
               }
+
+
+              var posObj = _.findWhere(posData, {id: pos}),
+                  $names;
+
+
+              //前に同じposが選択されてるかのチェック
+              if ( _.indexOf(selectedPos, pos) === -1 ) {
+                $pos.show();
+                selectedPos.push(pos);
+
+                //モブ名前のいれもの
+                $names = $('<div class="names name-' + areaId + '-' + pos + '"></div>')
+                  .css({
+                      top: posObj.top,
+                      left: posObj.left,
+                      'min-width': posObj.w,
+                      'min-height': posObj.h
+                  });
+                  $map.find('.map-mobname').append($names);
+              } else {
+                $names = $('.name-' + areaId + '-' + pos);
+              }
+
+                //モブ名前
+                var $name = $('<p>' + mobModel.get('name') + '</p>')
+                  .attr({
+                    'class': 'mob-' + areaId + '-' + pos + '_' + mobModel.get('id'),
+                    'data-id': mobModel.get('id')
+                  });
+                $names.append($name);
             });
           });
         }
@@ -162,6 +224,9 @@
     reset: function reset() {
       this.$el.find('.pos:visible').each(function(el) {
         el.hide();
+      });
+      $('.map-mobname').each(function() {
+        $(this).empty();
       });
     }
 
