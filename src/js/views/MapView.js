@@ -209,7 +209,7 @@
                 //モブ名前
                 var $name = $('<p>' + mobModel.get('name') + '</p>')
                   .attr({
-                    'class': 'mob-' + areaId + '-' + pos + '_' + mobModel.get('id'),
+                    'class': 'name mob-' + areaId + '-' + pos + '_' + mobModel.get('id'),
                     'data-id': mobModel.get('id')
                   });
                 $names.append($name);
