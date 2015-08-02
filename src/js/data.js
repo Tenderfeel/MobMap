@@ -354,10 +354,10 @@ module.exports = {
     {id: 136,lv: 59,name: "アラガンワーク・パラディン",pos: [4],area: 6},
     {id: 137,lv: 59,name: "アラガン・ワークビット",pos: [34,35,36,37],area: 6},
     {id: 138,lv: 59,name: "エンフォースドロイド",pos: [5],area: 6},
-    {id: 139,lv: 59,name: "エンプーサ",pos: [7,8],area: 6},
+    {id: 139,lv: 59,name: "エンプーサ",pos: [7,8,9],area: 6},
     {id: 140,lv: 59,name: "オウルベア",pos: [2],area: 6},//上級x3
     {id: 141,lv: 59,name: "コープスフラワー",pos: [8],area: 6},
-    {id: 142,lv: 59,name: "プロトナーガ",pos: [9,11],area: 6},
+    {id: 142,lv: 59,name: "プロト・ナーガ",pos: [11,13],area: 6},
     {id: 143,lv: 59,name: "魔導アダマンクロー",pos: [20,22],area: 6},
     {id: 144,lv: 59,name: "魔導コロッサスIII",pos: [21,26],area: 6},
     {id: 145,lv: 59,name: "メラシディアン・アンフィプテレ",pos: [27],area: 6},
