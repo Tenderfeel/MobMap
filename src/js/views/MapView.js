@@ -196,10 +196,10 @@
                 //モブ名前のいれもの
                 $names = $('<div class="names name-' + areaId + '-' + pos + '"></div>')
                   .css({
-                      top: posObj.top,
-                      left: posObj.left,
-                      'min-width': posObj.w,
-                      'min-height': posObj.h
+                      top: Math.floor((posObj.top / 582) * 10000) / 100 + '%',
+                      left: Math.floor((posObj.left / 582) * 10000) / 100+ '%',
+                      'min-width': Math.floor((posObj.w / 582) * 10000) / 100 + '%',
+                      'min-height': Math.floor((posObj.h / 582) * 10000) / 100 + '%'
                   });
                   $map.find('.map-mobname').append($names);
               } else {
