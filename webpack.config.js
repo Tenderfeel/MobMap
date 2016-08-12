@@ -11,6 +11,7 @@ module.exports = {
       path:"./dist/js",
       filename: "[name].js"
     },
+    watch: true,
     resolve: {
       modulesDirectories: ['node_modules'],
       // //aliasを貼るとrequire('jquery');のようにパス無しでつかえる

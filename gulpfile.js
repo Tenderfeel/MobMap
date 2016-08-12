@@ -48,7 +48,6 @@ gulp.task('webpack', function() {
 */
 gulp.task('watch', function(){
   gulp.watch(['src/**/*.html'], ['html']);
-  gulp.watch(['src/**/*.js'], ['webpack']);
 });
 
 /*

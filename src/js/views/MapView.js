@@ -223,7 +223,7 @@
 
     reset: function reset() {
       this.$el.find('.pos:visible').each(function(el) {
-        el.hide();
+        $(el).hide();
       });
       $('.map-mobname').each(function() {
         $(this).empty();
